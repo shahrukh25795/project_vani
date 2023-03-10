@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/GreycliffCF-Bold.ttf",
+      "sha1": "f53002f220f2f9b48843593f31cb9523de47e9b2"
+    },
+    {
+      "path": "src/assets/fonts/GreycliffCF-Medium.ttf",
+      "sha1": "29cc72c2bb7764e47ea70e85bf3b36e7c20535df"
+    },
+    {
+      "path": "src/assets/fonts/GreycliffCF-Regular.ttf",
+      "sha1": "1dd3a8c5738b338c9d475ba0a8ddc035e3c9dced"
+    }
+  ]
+}
