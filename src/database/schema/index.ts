@@ -2,6 +2,7 @@ export const USERS_SCHEMA = "Users";
 export const MESSAGE_SCHEMA = "Message";
 export const COMMENTS_SCHEMA = "Comments";
 export const FEEDS_SCHEMA = "Feeds";
+export const NEWS_FEED_SCHEMA = "NewsFeed";
 
 
 // Models and their properties
@@ -46,5 +47,16 @@ export const Comments = {
     properties: {
         id: "string", // primary key
         message: "string",
+    },
+};
+
+export const NewsFeed = {
+    name: NEWS_FEED_SCHEMA,
+    primaryKey: "id",
+    properties: {
+        id: "string", // primary key
+        news_title: "string",
+        news_description: "string",
+        image: "data?",
     },
 };

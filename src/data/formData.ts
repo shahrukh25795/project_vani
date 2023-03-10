@@ -19,6 +19,13 @@ export const signInFormData = () => {
     }
 }
 
+export const addNewsFeedFormData = () => {
+    return {
+        [API_CONSTANTS.news_title]: '',
+        [API_CONSTANTS.news_description]: '',
+    }
+}
+
 export const mediaData: Array<MediaDataType> = [
     { label: STRING_CONSTANTS.like, type: 'L' },
     { label: STRING_CONSTANTS.comment, type: 'C' },

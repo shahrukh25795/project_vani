@@ -17,6 +17,10 @@ export const COMMON_STYLE = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    RC: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
     RFSC: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -56,9 +60,10 @@ export const COMMON_STYLE = StyleSheet.create({
         paddingHorizontal: 20
     },
     media: {
-        width: 25,
-        height: 25,
-        overflow: 'hidden'
+        width: 20,
+        height: 20,
+        overflow: 'hidden',
+        marginLeft: 20
     },
 
     // auth style

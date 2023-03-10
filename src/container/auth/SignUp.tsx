@@ -1,7 +1,7 @@
 import { TextInput, View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import AppTheme from '../../components/appTheme'
-import { NAVIGATION_CONSTANTS, STRING_CONSTANTS } from '../../utils/constants'
+import { STRING_CONSTANTS } from '../../utils/constants'
 import AppAuthContent from '../../components/AppAuthContent'
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { AppInput } from '../../libs/app-input'
@@ -16,7 +16,6 @@ import { USERS_SCHEMA } from '../../database/schema'
 import { actionCreators } from '../../actions/actionCreators'
 import { useDispatch } from 'react-redux'
 import { API_CONSTANTS } from '../../utils/constants'
-import { useNavigation } from '@react-navigation/native'
 
 const SignUp = () => {
 
@@ -33,7 +32,6 @@ const SignUp = () => {
     });
 
     const dispatch = useDispatch();
-    const navigation = useNavigation();
 
     const [isSecure, setIsSecure] = useState<any>(true);
 
@@ -44,7 +42,6 @@ const SignUp = () => {
         insertNewData(USERS_SCHEMA, apiPayload).then((res: any) => {
             if (res?.status == 200) {
                 dispatch(actionCreators.loginSuccess(res?.data));
-                navigation.navigate(NAVIGATION_CONSTANTS.dashboard_screen as never);
             }
         });
     };

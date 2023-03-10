@@ -17,7 +17,9 @@ export const API_CONSTANTS = {
     last_name: 'last_name',
     email: 'email',
     password: 'password',
-    type: 'type'
+    type: 'type',
+    news_title: 'news_title',
+    news_description: 'news_description'
 }
 
 export const APP_CONSTANTS = {
@@ -56,6 +58,8 @@ export const IMAGES = {
     eye_open: require('../assets/images/eye_open.png'),
     post: require('../assets/images/post.png'),
     send: require('../assets/images/send.png'),
+    newspaper: require('../assets/images/newspaper.png'),
+    logout: require('../assets/images/logout.png'),
 }
 
 
@@ -85,6 +89,8 @@ export const NAVIGATION_CONSTANTS = {
     signup_screen: "signup_screen",
     dashboard_screen: "dashboard_screen",
     message_screen: "message_screen",
+    news_feeds_screen: "news_feeds_screen",
+    create_news_feeds_screen: "create_news_feeds_screen",
 };
 
 export const STRING_CONSTANTS = {
@@ -135,9 +141,17 @@ export const STRING_CONSTANTS = {
     comment: 'Comment',
     send: 'Send',
     add_media: 'Add Media',
+    update_media: 'Update Media',
     no_data: 'No Data',
     no_data_message: (message: any) => `Looks like there are no ${message} that match your criteria.😎😳🤗🙂😅😋🙏`,
     message: 'Message',
     comments: 'Comments',
-    type_message: 'Type something...'
+    type_message: 'Type something...',
+    news_feeds: 'News Feed',
+    add_news_feeds: 'Add News Feed',
+    add_news_feeds_title: 'News is a personalized news aggregator that organizes and highlights.',
+    news_feed_title: 'News feed title',
+    news_feed_title_placeholder: 'Enter news feed title',
+    news_feed_desc: 'News feed description',
+    news_feed_desc_placeholder: 'Enter news feed description',
 }

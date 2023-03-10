@@ -11,8 +11,6 @@ import { dismissKeyboard } from '../../utils/globalFunctions'
 import { signInFormData } from '../../data/formData'
 import { IMAGES } from '../../utils/constants'
 import { COMMON_STYLE } from '../../utils/commonStyles'
-import { useNavigation } from '@react-navigation/native'
-import { NAVIGATION_CONSTANTS } from '../../utils/constants'
 import { queryAuthenticateUser } from '../../database/apis'
 import { showAlert } from '../../components/mediaPicker/utils'
 import { actionCreators } from '../../actions/actionCreators'
@@ -31,7 +29,6 @@ const SignIn = () => {
         reValidateMode: 'onBlur',
     });
 
-    const navigation = useNavigation();
     const dispatch = useDispatch();
 
     const [isSecure, setIsSecure] = useState<any>(true);
@@ -42,7 +39,6 @@ const SignIn = () => {
             if (res?.status == 200) {
                 if (res?.data) {
                     dispatch(actionCreators.loginSuccess(res?.data));
-                    navigation.navigate(NAVIGATION_CONSTANTS.dashboard_screen as never);
                 } else {
                     showAlert(STRING_CONSTANTS.email_not_registered)
                 }

@@ -102,7 +102,12 @@ export interface ChatInputProps {
 }
 
 export interface MessageElementProps {
-    data?: any
+    data: any
+}
+
+
+export interface NewsItemsProps {
+    data: any
 }
 
 export interface TextInputProps extends RNTextInputProps, UseControllerProps {

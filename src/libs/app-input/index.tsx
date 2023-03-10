@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     errorContainer: {
-        marginTop: isIos() ? 15 : -8,
+        marginTop: isIos() ? 20 : -8,
     },
     error: {
         color: COLORS.red,

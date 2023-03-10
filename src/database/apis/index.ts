@@ -1,13 +1,13 @@
 import Realm from "realm";
 
-import { Users, Feeds, Message, Comments, USERS_SCHEMA } from "../schema";
+import { Users, Feeds, Message, Comments, USERS_SCHEMA, NewsFeed } from "../schema";
 
 export const CREATED_SUCCESS = "Created Successfully";
 export const UPDATED_SUCCESS = "Updated Successfully";
 
 export const databaseOptions = {
     path: 'database.realm',
-    schema: [Users, Comments, Message, Feeds],
+    schema: [Users, Comments, Message, Feeds, NewsFeed],
     schemaVersion: 1, //optional
 };
 

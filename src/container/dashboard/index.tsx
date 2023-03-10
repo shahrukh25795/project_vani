@@ -46,7 +46,7 @@ const Dashboard = () => {
             if (res?.status == 200) {
                 if (res?.data?.length > 0) {
                     const listData = res?.data?.map((item: any) => {
-                        item.image = `data:image/jpeg;base64,${arrayBufferToBase64(item?.image)}`
+                        item.image = item.image ? `data:image/jpeg;base64,${arrayBufferToBase64(item?.image)}` : null
                         return item;
                     })
                     setFeedsList(listData);
@@ -79,16 +79,21 @@ const Dashboard = () => {
             HeaderProps={{
                 title: STRING_CONSTANTS.feeds,
                 backButtonProps: {
-                    style: { borderRadius: 50, overflow: 'hidden' },
-                    backImgSrc: { uri: 'https://source.unsplash.com/900x900/?gym' },
-                    resizeMode: 'contain',
-                    onBack: () => dispatch(actionCreators.logoutSuccess)
+                    style: { borderRadius: 50, overflow: 'hidden', borderWidth: 0, padding: 7 },
+                    backImgSrc: IMAGES.post,
+                    onBack: () => setIsShowMediaPicker((prevState) => !prevState),
+                    resizeMode: 'contain'
                 },
+                textStyle: { marginLeft: 50 },
                 hideNullView: true,
-                actionComp: <AppPressable onPress={() => setIsShowMediaPicker((prevState) => !prevState)} style={COMMON_STYLE.media}>
-                    <Image source={IMAGES.post} style={COMMON_STYLE.width_height_100_percent} />
-                </AppPressable>
-
+                actionComp: <View style={COMMON_STYLE.RC}>
+                    <AppPressable onPress={() => navigation.navigate(NAVIGATION_CONSTANTS.news_feeds_screen as never)} style={COMMON_STYLE.media}>
+                        <Image source={IMAGES.newspaper} style={COMMON_STYLE.width_height_100_percent} />
+                    </AppPressable>
+                    <AppPressable onPress={() => dispatch(actionCreators.logoutSuccess)} style={COMMON_STYLE.media}>
+                        <Image source={IMAGES.logout} style={COMMON_STYLE.width_height_100_percent} />
+                    </AppPressable>
+                </View>
             }}
             backgroundStyle={{ paddingHorizontal: 0 }}
             handleBottomNotch={false}
